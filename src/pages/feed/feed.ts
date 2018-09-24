@@ -26,6 +26,9 @@ export class FeedPage {
     qntd_comments: 4,
     time_comment: "11h ago"
   }
+
+  public lista_filmes = new Array<any>();
+
   public nomeUsuario: string = "Éder Mello - veio do código";
 
   constructor(
@@ -41,7 +44,17 @@ export class FeedPage {
   ionViewDidLoad() {
     //this.somaDoisNumeros(5, 10);
     this.movieProvider.getLatesMovies().subscribe(
-      data => { console.log(data); },
+      data=>{ 
+        
+        
+        const response = (data as any);
+
+        console.log(response.results);
+        const objeto_retorno = JSON.parse(JSON.stringify(response.results));
+        this.lista_filmes = objeto_retorno;
+        
+        console.log(objeto_retorno);
+      },
       error => { console.log(error);
 
       }

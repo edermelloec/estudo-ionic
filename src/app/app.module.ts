@@ -15,6 +15,7 @@ import { IntroPageModule } from '../pages/intro/intro.module';
 import { MoovieProvider } from '../providers/moovie/moovie';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     MyApp,

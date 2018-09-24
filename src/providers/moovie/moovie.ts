@@ -9,12 +9,13 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class MoovieProvider {
-  private url_base = "https://api.themoviedb.org/3"
+  private url_base = "https://api.themoviedb.org/3";
+  private api_key = "0d09731840a0c01d58643a45c319b3c6";
   constructor(public http: HttpClient) {
     console.log('Hello MoovieProvider Provider');
   }
-
+ 
   getLatesMovies() {
-    return this.http.get(this.url_base + "/movie/latest?api_key=56565958363476674e5e63643c787867");
+    return this.http.get(this.url_base + "/movie/popular?api_key="+this.api_key);
   }
 }
